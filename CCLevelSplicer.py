@@ -15,7 +15,7 @@ out_name = sys.argv[2]
 try:
     input_file = open(in_name,'rb')
 except IOError as e:
-    print "I/O error: {0}".format(e.strerror)
+    print "I/O error: {0} {1}".format(e.strerror, in_name)
     sys.exit()
 
 lines = input_file.read().split('\n')
@@ -33,7 +33,7 @@ for x in lines:
             cur_file = open(level_set,'rb')
             level_sets[level_set] = cur_file
         except IOError as e:
-            print "I/O error({0}): {1}".format(e.errno, e.strerror)
+            print "I/O error: {0} {1}".format(e.strerror, level_set)
             sys.exit()
     else:
         cur_file = level_sets[level_set]
