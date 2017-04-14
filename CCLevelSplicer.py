@@ -59,7 +59,7 @@ for x in level_sets:
     level_sets[x].close()
 level_sets.clear()
 
-output_buffer = b'\xac\xaa\x02\x00' + struct.pack("<h", n)[0] + b'\x00'
+output_buffer = b'\xac\xaa\x02\x00' + struct.pack("<h", n)
 for x in level_buffer:
     output_buffer += x
 output_f = open(out_name,'wb')
